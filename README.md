@@ -2,9 +2,7 @@
 - https://www.mediawiki.org/wiki/API:Opensearch#JavaScript
 - https://www.mediawiki.org/w/api.php?action=help&modules=query
 
-  `
-                        
-    search(term: string) {
+  `search(term: string) {
         return this.httpClient.get('https://en.wikipedia.org/w/api.php?origin=*', {
         params: {
             action: 'query',
@@ -13,9 +11,7 @@
             list: 'search'
         }
         })
-    }
-
-  `
+    }`
 
   ### Styling
   - https://bulma.io/

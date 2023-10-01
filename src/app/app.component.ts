@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WikipediaService } from './wikipedia.service';
+import { WikipediaResponse, WikipediaService } from './wikipedia.service';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,14 @@ import { WikipediaService } from './wikipedia.service';
 })
 export class AppComponent implements OnInit {
   title = 'wikisearch';
-  pages = [];
+  pages: any[] = [];
 
   constructor(private readonly wikipediaService: WikipediaService) {}
 
   ngOnInit(): void {}
 
   onTerm(term: string) {
-    this.wikipediaService.search(term).subscribe((response:any) => {
-        this.pages = response.query.search    });
+    this.wikipediaService.search(term).subscribe((pages) => {
+        this.pages = pages    });
   }
 }
